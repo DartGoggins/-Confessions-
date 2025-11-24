@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Confessions</title>
+    <title>Our Essay Journal</title>
     <style>
         body { background-color: black; color: gray; font-family: 'Times New Roman', serif; margin: 20px; padding: 20px; }
         h1 { color: white; text-align: center; }
@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h1>Confessions</h1>
+    <h1>Our Shared Essay Journal</h1>
     <p>Upload your essays here (PDF, DOC, or Word). Files will be listed below for download.</p>
     <div class="upload-section">
         <input type="file" accept=".pdf,.doc,.docx" multiple id="fileInput">
@@ -36,8 +36,12 @@
             }
         }
         function downloadFile(name) {
-            // Placeholder: In a real setup, you'd save files to a server. For now, this just logs.
-            alert('Download functionality needs a backend. Use a service like Netlify for persistence.');
+           <form name="essay-upload" method="POST" data-netlify="true" enctype="multipart/form-data">
+    <p>Upload your essay (PDF, DOC, or Word):</p>
+    <input type="file" name="essay" accept=".pdf,.doc,.docx" required>
+    <input type="text" name="title" placeholder="Essay Title" required>
+    <button type="submit">Submit Essay</button>
+</form>
         }
     </script>
 </body>
